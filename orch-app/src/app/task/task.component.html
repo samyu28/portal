@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="section">
+        <h2>Workflow Tasks</h2>
+    </div>
+    <div class="section">
+        <div class="responsive-table">
+            <table class="table table--bordered table--hover">
+                <thead>
+                    <tr>
+                        <th class="sortable">Order ID<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Task ID<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Task<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Priority<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Order Submitter<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Status<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">Start Time<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th class="sortable">SLA Time<span class="sort-indicator icon-chevron-down"></span></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let task of tasks">
+                    <tr>
+                        <td>{{task.processId}}</td>
+                        <td>{{task.taskId}}</td>
+                        <td>{{task.name}}</td>
+                        <td>{{task.priority}}</td>
+                        <td>{{task.submitter}}</td>
+                        <td>{{task.status}}</td>
+                        <td>{{task.startTime | date:'short'}}</td>
+                        <td>{{task.startTime + 1507093292 | date:'short' }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn--primary-ghost">Pause</button>
+                                <button class="btn btn--primary-ghost">View</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

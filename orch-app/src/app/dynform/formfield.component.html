@@ -1,0 +1,46 @@
+<div [formGroup]="form">
+    <div [ngSwitch]="field.type">
+        <div *ngSwitchCase="'text'" class="form-group">
+            <div class="form-group__text text-uppercase text-medium ">
+                <input type="text" class="form-control" formControlName="{{field.name}}" id="{{field.id}}" value="{{field.value || field.defval}}">
+                <label for="{{field.id}}">{{field.label}}</label>
+            </div>
+        </div>
+        <div *ngSwitchCase="'checkbox'" class="form-group">
+            <label class="checkbox">
+            <input type="checkbox" formControlName="{{field.name}}" id="{{field.id}}" value="{{field.value || field.defval}}">
+            <span class="checkbox__input"></span>
+            <span class="checkbox__label text-uppercase text-medium">{{field.label}}</span>
+        </label>
+        </div>
+        <div *ngSwitchCase="'textArea'" class="form-group">
+            <div class="form-group__text text-uppercase text-medium">
+                <textarea type="text" class="form-control" rows="5" formControlName="{{field.name}}" id="{{field.name}}" value=" "></textarea>
+                <label for="{{field.name}}">{{field.label}}</label>
+            </div>
+        </div>
+        <div *ngSwitchCase="'list'" class="form-group text-uppercase text-medium">
+            <div class="form-group__text select">
+                <select formControlName="{{field.name}}" id="{{field.id}}" name="{{field.id}}">
+                    <option *ngFor="let lov of field.listval" [value]="lov">{{lov}}</option>
+                </select>
+                <label for="{{field.id}}">{{field.label}}</label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="required icon-exclamation-triangle" *ngIf="form.controls[field.name].errors?.required
+                     && form.controls[field.name].touched" >This is required field</div>
+
+    <div class="required icon-exclamation-triangle" *ngIf="form.controls[field.name].dirty && form.controls[field.name].errors?.minlength">min length error</div>
+    <div class="required icon-exclamation-triangle" *ngIf="form.controls[field.name].dirty && form.controls[field.name].errors?.maxlength">max length error</div>
+    <div class="pattern icon-error text-danger" *ngIf="form.controls[field.name].errors?.pattern && form.controls[field.name].touched">
+        pattern not matched</div>
+
+    
+   
+   
+    
+</div>

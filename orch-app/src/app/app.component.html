@@ -1,0 +1,67 @@
+<div class="content-fluid">
+    <div [ngClass]="[showSidebar ? 'sidebar' : 'sidebar--hidden']">
+        <ul>
+            <li class="sidebar__item text-large text-uppercase"><a style="font-weight: 200" routerLink="/catalog" routerLinkActive="active">Catalog</a></li>
+            <li class="nsidebar__item text-large text-uppercase"><a style="font-weight: 200" routerLink="/order" routerLinkActive="active">Orders</a></li>
+            <li class="sidebar__item text-large text-uppercase"><a style="font-weight: 200" routerLink="/task" routerLinkActive="active">Tasks</a></li>
+            <li class="sidebar_na_item text-large text-uppercase"><a style="font-weight: 200" routerLink="/intentory" routerLinkActive="active">Inventory</a></li>
+            <li class="sidebar__item text-large text-uppercase"><a style="font-weight: 200" routerLink="/report" routerLinkActive="active">Reports</a></li>
+        </ul>
+    </div>
+    <main>
+        <header class="header">
+            <div class="header-bar container">
+                <a class="btn btn--small btn--icon toggle-menu" (click)="toggleSidebar()">
+                    <span class="icon-list-menu"></span>
+                </a>
+                <a class="header-bar__logo">
+                    <span class="icon-cisco"></span>
+                </a>
+                <div class="header-bar__main">
+                    <div class="header-heading">
+                        <h1 class="page-title">Service Portal</h1>
+                    </div>
+                </div>
+                <div class="header-toolbar">
+                    <a class="btn btn--small btn--icon">
+                        <span class="icon-search"></span>
+                    </a>
+                    <a class="btn btn--small btn--icon">
+                        <span class="icon-alert"></span>
+                    </a>
+                    <a class="btn btn--small btn--icon">
+                        <span class="icon-cog"></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <router-outlet></router-outlet>
+
+        <footer class="footer footer--new">
+            <div class="footer__links">
+                <ul class="list">
+                    <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+                    <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+                    <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+                    <li><a href="http://www.cisco.com/web/siteassets/legal/terms_condition.html" target="_blank">Terms &amp; Conditions</a></li>
+                    <li><a href="http://www.cisco.com/web/siteassets/legal/privacy_full.html" target="_blank">Privacy Statement</a></li>
+                    <li><a href="http://www.cisco.com/web/siteassets/legal/privacy_full.html#cookies" target="_blank">Cookie Policy</a></li>
+                    <li><a href="http://www.cisco.com/web/siteassets/legal/trademark.html" target="_blank">Trademarks</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__legal">
+                <div class="footer__logo">
+                    <a href="http://www.cisco.com" target="_blank">
+                        <span class="icon-cisco"></span>
+                    </a>
+                </div>
+                <div class="footer__copyright">
+                    <div>Copyright © 2017 Cisco Systems Inc.</div>
+                    <div>All rights reserved.</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</div>
